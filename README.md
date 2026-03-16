@@ -1,0 +1,1 @@
+# curso_SENAC_T-cnico_IA
