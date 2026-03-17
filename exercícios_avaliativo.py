@@ -11,17 +11,18 @@ print('Contagem de palavras')
 frase = str(input('Digite uma frase: ')).split()
 print(f'Quantidade de palavras: {len(frase)}')
 
+
 print('Maior número da lista')
 n = list()
-maior = quant = 0
+maior = 0
 for i in range(1, 5):
-  n.append(int(input(f'{i}° número: ')))
-  quant += 1
-    if n > maior:
-        maior = n
-
+  num = int(input(f'{i}° número: '))
+  n.append(num)
+  if i == 0 or num > maior:
+    maior = num
 print(f'Lista de números {n}')
 print(f'O maior é {maior}')
+
 
 print('Contagem de números PARES')
 num = [12, 7, 9, 20, 33, 18, 4]
@@ -31,14 +32,47 @@ for c in num:
     par += 1
 print(f'Há {par} números pares.')
 
+
 print('Filtrando dados')
 idades = [15, 18, 22, 17, 30, 14, 40]
-maior = 0
-for i in idades:
-  if i >= 18:
-    maior += 1
-print(f'Os maiores de idade são {maior}')
+maiores = [i for i in idades if i > 18]
+print(maiores)
+
 
 print('Frequência de números')
 dados = [1, 2, 2, 3, 3, 3, 4, 4, 5]
-for c in dados:
+frequencia = {}
+for num in dados:
+  if num in frequencia:
+    frequencia[num] += 1
+  else:
+    frequencia[num] = 1 
+print(frequencia)
+for i in frequencia:
+  print(i, 'aparece', frequencia[i], 'vez' )
+
+
+print('CAlculo de média notas')
+print('Para encerrar digite -1')
+print('Digite as notas:')
+notas = []
+while True:
+  nota = int(input('Nota: '))
+  if nota == -1:
+    break
+  notas.append(nota)
+media = sum(notas) / len(notas)
+print(f'A media é {media:.2f}')
+
+
+print('Soma de matriz')
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+soma = 0
+for l in matriz:
+  for c in l:
+    soma += c 
+print(f'A soma total é {soma}')
